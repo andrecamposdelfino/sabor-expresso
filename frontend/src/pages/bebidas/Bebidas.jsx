@@ -2,15 +2,12 @@ import styled from "styled-components"
 import CardItem from "../../components/CardItem"
 import Footer from "../../components/Footer"
 
-const Bebidas = () => {
-
-  const Container = styled.div`
+const Container = styled.div`
   
     width: 100%;
     height: 100vh;
   
   `
-
   const Banner = styled.div`
     width: 100%;
     height: 200px;
@@ -32,7 +29,6 @@ const Bebidas = () => {
       font-family: 'Poppins', sans-serif;
     }
   `
-
   const Wrapper = styled.div`
     width: 1024px;
     margin: 0 auto;
@@ -50,11 +46,9 @@ const Bebidas = () => {
       border: 1px solid #f3a15fff;
     }
   `
-
   const WrapperBox = styled.div`
     width: 100%; 
   `
-
   const WrapperCards = styled.div`
     width: 1024px;
     margin: 0 auto;
@@ -66,7 +60,9 @@ const Bebidas = () => {
 
   `
 
+const Bebidas = () => {
 
+  
 
   return (
     <Container>

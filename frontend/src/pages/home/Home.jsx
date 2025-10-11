@@ -6,8 +6,6 @@ import CardItem from "../../components/CardItem"
 
 import Footer from "../../components/Footer"
 
-const Home = () => {
-
   const Container = styled.div`
   
     width: 100%;
@@ -72,6 +70,8 @@ const Home = () => {
 
 
   `
+
+const Home = () => {
 
   const [produtos, setProdutos] = useState([])
 

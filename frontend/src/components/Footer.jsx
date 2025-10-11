@@ -1,14 +1,10 @@
 import styled from "styled-components"
-
-const Footer = () => {
-
-  const Container = styled.div`
+const Container = styled.div`
     width: 100%;
     height: 150px;
     background-color: #282c34;
     color: white;
     margin-bottom: 0;
-    // position: fixed;
     left: 0;
     bottom: 0;
     z-index: 100;
@@ -18,6 +14,7 @@ const Footer = () => {
     
   `
 
+const Footer = () => {
 
   return (
     <Container>Footer</Container>

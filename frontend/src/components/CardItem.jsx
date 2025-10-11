@@ -18,6 +18,12 @@ const CardItem = ({ imagem, titulo, descricao, preco, id }) => {
         &:hover {   
             transform: translateY(-10px);
         }
+
+        p{
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px; 
+            margin-top: 10px;
+        }
         
     `
     const BoxSeparador = styled.div`
@@ -69,11 +75,6 @@ const CardItem = ({ imagem, titulo, descricao, preco, id }) => {
         font-size: 20px; 
         margin-top: 20px;
     `
-    const Descricao = styled.p`
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px; 
-        margin-top: 10px;
-    `
 
     // const navigate = useNavigate();
 
@@ -83,7 +84,7 @@ const CardItem = ({ imagem, titulo, descricao, preco, id }) => {
                 <img src={imagem} alt="" srcset="" />
             </CardImagem>
             <Titulo>{titulo}</Titulo>
-            <Descricao>{descricao}</Descricao>
+            <p>{descricao}</p>
             <BoxSeparador>
                 <span>{preco}</span>
                 <button>

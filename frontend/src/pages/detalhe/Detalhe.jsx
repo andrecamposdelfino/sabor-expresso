@@ -3,29 +3,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import styled from "styled-components";
-
-const Detalhe = () => {
-
-    const { id } = useParams();
-    const [produto, setProduto] = useState({});
-    const [quantity, setQuantity] = useState(1);
-
-    useEffect(() => {
-        const fecthProduto = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3000/produtos/${id}`);
-                if (response.status === 200) {
-                    setProduto(response.data)
-                }
-
-            } catch (error) {
-                console.error("Erro ao buscar produto:", error);
-            }
-        }
-
-        fecthProduto()
-    }, [id])
-
     const Container = styled.div`
         width: 100%;
         height: 100vh;
@@ -96,6 +73,30 @@ const Detalhe = () => {
             padding: 5px;
         }
     `
+
+const Detalhe = () => {
+
+    const { id } = useParams();
+    const [produto, setProduto] = useState({});
+    const [quantity, setQuantity] = useState(1);
+
+    useEffect(() => {
+        const fecthProduto = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/produtos/${id}`);
+                if (response.status === 200) {
+                    setProduto(response.data)
+                }
+
+            } catch (error) {
+                console.error("Erro ao buscar produto:", error);
+            }
+        }
+
+        fecthProduto()
+    }, [id])
+
+
 
     const handleSaveLocalStorage = () => {
         const produto2 = {

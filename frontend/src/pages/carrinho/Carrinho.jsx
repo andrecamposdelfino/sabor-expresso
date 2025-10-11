@@ -137,18 +137,34 @@ import styled from "styled-components";
 const Carrinho = () => {
 
   const [produtoCarrinho, setProdutoCarrinho] = useState([])
+  const [valorTotal, setValorTotal] = useState(0)
   useEffect(() => {
     const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho")) || [];
-    setProdutoCarrinho(carrinhoAtual)    
+    setProdutoCarrinho(carrinhoAtual)   
+    
+    let total = 0;
+    carrinhoAtual.forEach(item => {
+      total += item.preco * item.quantity
+    })
+
+    setValorTotal(total.toFixed(2))
+    
   }, [])
 
   const removeItemCarrinho = (id) => {
     const novoCarrinho = produtoCarrinho.filter(item => item.id !== id);
     setProdutoCarrinho(novoCarrinho);
     localStorage.setItem('carrinho', JSON.stringify(novoCarrinho));
+
+    let total = 0;
+    novoCarrinho.forEach(item => {
+      total += item.preco * item.quantity
+    })
+
+    setValorTotal(total.toFixed(2))
   }
 
-
+  
   return (
     <>
     <Container>
@@ -176,7 +192,7 @@ const Carrinho = () => {
 
         <div>
           <form>
-            <Titulo>Valor total do pedido <span>R$ 150.00</span></Titulo>
+            <Titulo>Valor total do pedido <span>R$ {valorTotal}</span></Titulo>
             <Titulo>Informe seu dados para finalizar</Titulo>
             <p>&nbsp;</p>
             <FormGroup>

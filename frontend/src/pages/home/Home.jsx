@@ -4,14 +4,13 @@ import axios from "axios"
 import styled from "styled-components"
 import CardItem from "../../components/CardItem"
 
-import Footer from "../../components/Footer"
 
   const Container = styled.div`
   
     width: 100%;
     min-height: 100vh;
     background-color: #f5f5f5;
-    // margin-bottom: 50px;  /* Espaço para o footer fixo */
+
   
   `
 
@@ -122,7 +121,7 @@ const Home = () => {
 
         </WrapperCards>
       </Wrapper>
-      <Footer />
+     
     </Container>
   )
 }

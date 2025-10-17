@@ -108,7 +108,7 @@ const Esfirras = () => {
 
         </WrapperCards>
       </Wrapper>
-      <Footer />
+      
     </Container>
   )
 }

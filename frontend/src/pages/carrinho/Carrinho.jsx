@@ -2,6 +2,7 @@
 import { useState, useEffect} from "react";
 
 import styled from "styled-components";
+import Footer from "../../components/Footer"
 
   const Container = styled.div`
     width: 100%;
@@ -12,7 +13,7 @@ import styled from "styled-components";
     padding: 20px;
   `
   const Card = styled.div`
-    width: 600px; 
+    width: 90%; 
     height: 150px;
     border: 1px solid #e3e1e15d;
     margin-bottom: 10px;
@@ -27,6 +28,7 @@ import styled from "styled-components";
       border-radius: 4px;
       background-color: #41403fff;
       color: white;
+      cursor:pointer;
     }
 
     img {
@@ -69,6 +71,16 @@ import styled from "styled-components";
     padding: 10px;
     gap: 3px;
 
+
+    button {
+      width: 100px;
+      height: 30px;
+      border: none;
+      border-radius: 4px;
+      background-color: #33302cff;
+      color: white;
+    }
+
     p {
       font-family: 'Poppins', sans-serif;
       font-size: 1rem;
@@ -79,65 +91,28 @@ import styled from "styled-components";
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction:column;
     padding: 20px;
     gap: 20px;
-
-    form {
-      width: 500px;
-      min-height: 200px;
-      border: 1px solid #e3e1e15d;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 20px;
-    }
-
-    button {
-      width: 100px;
-      height: 30px;
-      border: none;
-      border-radius: 4px;
-      background-color: #41403fff;
-      color: white;
-    }
     
   `
 
   const BoxCards = styled.div`
-    width: 55%;
+    width: 100%;
     height: 100%; 
     display: flex;
     flex-direction: column;
     align-items: start;
-    overflow-y: auto;
+    margin-bottom:150px;
     padding-right: 10px;
 
-  `
-
-  const FormGroup = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-
-    label {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      font-weight: bold;  
-      margin-bottom: 5px;
-    }
-
-    input {
-      padding: 8px; 
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
   `
 
 const Carrinho = () => {
 
   const [produtoCarrinho, setProdutoCarrinho] = useState([])
   const [valorTotal, setValorTotal] = useState(0)
+
   useEffect(() => {
     const carrinhoAtual = JSON.parse(localStorage.getItem("carrinho")) || [];
     setProdutoCarrinho(carrinhoAtual)   
@@ -172,6 +147,8 @@ const Carrinho = () => {
         <Titulo>Carrinho</Titulo>
       </Banner>
       <p>&nbsp;</p>
+      <p>ID DO PEDIDO : {Math.random(100)}</p>
+      <p>&nbsp;</p>
       <Wrapper>
         
         <BoxCards>
@@ -189,38 +166,9 @@ const Carrinho = () => {
         
         ))}
         </BoxCards>
-
-        <div>
-          <form>
-            <Titulo>Valor total do pedido <span>R$ {valorTotal}</span></Titulo>
-            <Titulo>Informe seu dados para finalizar</Titulo>
-            <p>&nbsp;</p>
-            <FormGroup>
-              <label htmlFor="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" required />
-            </FormGroup>
-
-            <FormGroup>
-              <label htmlFor="endereco">Endereço:</label>
-              <input type="text" id="endereco" name="endereco" required />
-            </FormGroup>
-
-            <FormGroup>
-              <label htmlFor="numero">Numero da casa:</label>
-              <input type="text" id="numero" name="numero" required />
-            </FormGroup>
-
-            <FormGroup>
-              <label htmlFor="telefone">Telefone:</label>
-              <input type="text" id="telefone" name="telefone" required />
-            </FormGroup>
-
-            <button>Finalizar</button>
-            
-          </form>
-        </div>
+      <p>&nbsp;</p>
       </Wrapper>
-      
+      <Footer valorTotal={valorTotal} />
     </Container>
   </>
     

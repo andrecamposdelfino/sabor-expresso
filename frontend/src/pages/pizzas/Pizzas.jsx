@@ -112,7 +112,7 @@ const Pizzas = () => {
 
         </WrapperCards>
       </Wrapper>
-      <Footer />
+      
     </Container>
   )
 }

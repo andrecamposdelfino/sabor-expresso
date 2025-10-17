@@ -108,7 +108,7 @@ const Bebidas = () => {
 
         </WrapperCards>
       </Wrapper>
-      <Footer />
+      
     </Container>
   )
 }

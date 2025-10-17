@@ -110,7 +110,7 @@ const Pasteis = () => {
 
         </WrapperCards>
       </Wrapper>
-      <Footer />
+      
     </Container>
   )
 }

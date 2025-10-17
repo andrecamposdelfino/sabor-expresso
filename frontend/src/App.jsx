@@ -6,7 +6,7 @@ import Pizzas from "./pages/pizzas/Pizzas"
 import Esfirras from "./pages/esfirras/Esfirras"
 import Bebidas from "./pages/bebidas/Bebidas" 
 import Carrinho from "./pages/carrinho/Carrinho"
-import FormularioEntrega from "./pages/formularioentrega/FormularioEntrega"
+import Formulario from "./pages/formulario/Fomulario"
 
 import Header from "./components/Header"
 import NavBar from "./components/NavBar"
@@ -28,7 +28,7 @@ function App() {
         <Route path="/bebidas" element={<Bebidas />} />
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/detalhe/:id" element={<Detalhe />} />
-        <Route path="/formularioentrega" element={<FormularioEntrega />} />
+        <Route path="/formulario" element={<Formulario />} />
       </Routes>
       
       
